@@ -1,0 +1,89 @@
+.album-footer {
+    width: 100%;
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 40px;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+    
+.album-footer p {
+    color: #ffffff;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 10px 0;
+    animation: fadeIn 1.5s ease-in;
+}
+    
+.album-footer .signature {
+    font-size: 2.5em;
+    margin-top: 20px;
+    color: #ffffff;
+    font-weight: 700;
+}
+    
+    /* Thêm hiệu ứng hover cho trái tim */
+.signature:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+    
+    /* Animation cho chữ xuất hiện */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+    
+/* Thêm CSS cho phần social links */
+.social-links {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+    
+.social-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5em;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+    
+.social-icon:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+    
+    /* Màu riêng cho từng icon khi hover */
+.social-icon:hover .fa-facebook {
+    color: #1877f2;
+}
+    
+.social-icon:hover .fa-instagram {
+    color: #e4405f;
+}
+    
+.social-icon:hover .fa-envelope {
+    color: #ea4335;
+}
+    
+.social-icon:hover .fa-phone {
+    color: #4caf50;
+}

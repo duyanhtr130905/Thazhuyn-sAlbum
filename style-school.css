@@ -1,0 +1,252 @@
+/* CSS cho toàn trang */
+body {
+    background: linear-gradient(135deg, rgba(103, 24, 24, 0.936), rgba(107, 96, 96, 0.8)),
+                url(image/school/fb990a7f64cad99480db24.jpg); /* Thay ảnh nền */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Dancing Script', cursive; /* Font chữ mềm mại */
+}
+
+/* CSS cho tiêu đề */
+.title {
+    text-align: center;
+    padding: 80px 0 40px 0; /* Điều chỉnh padding cho phù hợp với taskbar */
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.title h1 {
+    color: #eadede; /* Màu đỏ thẫm */
+    font-size: 4em;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 0;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Hiệu ứng phát sáng cho title */
+@keyframes glow {
+    from {
+        text-shadow: 
+            0 0 5px #fff,
+            0 0 10px #a56b6b,
+            0 0 15px #905b5b,
+            0 0 20px #8B0000,
+            0 0 25px #8B0000,
+            0 0 30px #8B0000,
+            0 0 35px #8B0000;
+    }
+    to {
+        text-shadow: 
+            0 0 10px #fff,
+            0 0 20px #934444,
+            0 0 30px #9c8383,
+            0 0 40px #b68787,
+            0 0 50px #cb9e9e,
+            0 0 60px #816666,
+            0 0 70px #8B0000;
+    }
+}
+
+/* Thêm các ngôi sao với các vị trí khác nhau */
+.title::before { right: 20%; top: 20%; }
+.title::after { left: 15%; bottom: 30%; }
+
+/* Thêm các ngôi sao mới */
+.title .star-1,
+.title .star-2,
+.title .star-3,
+.title .star-4,
+.title .star-5,
+.title .star-6 {
+    content: '✦';
+    position: absolute;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.title .star-1 { left: 25%; top: 15%; animation: twinkle 2s infinite 0.2s; }
+.title .star-2 { right: 30%; bottom: 20%; animation: twinkle 2s infinite 0.4s; }
+.title .star-3 { left: 40%; top: 30%; animation: twinkle 2s infinite 0.6s; }
+.title .star-4 { right: 35%; top: 25%; animation: twinkle 2s infinite 0.8s; }
+.title .star-5 { left: 30%; bottom: 25%; animation: twinkle 2s infinite 1s; }
+.title .star-6 { right: 25%; top: 35%; animation: twinkle 2s infinite 1.2s; }
+
+/* Thêm biến thể kích thước cho các ngôi sao */
+.title .star-1 { font-size: 1.2em; }
+.title .star-2 { font-size: 0.8em; }
+.title .star-3 { font-size: 1em; }
+.title .star-4 { font-size: 0.9em; }
+.title .star-5 { font-size: 1.1em; }
+.title .star-6 { font-size: 0.7em; }
+
+/* Hiệu ứng lấp lánh cho các ngôi sao */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* CSS cho taskbar */
+.taskbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(139, 0, 0, 0.8); /* Màu đỏ thẫm với độ trong suốt */
+    backdrop-filter: blur(8px); /* Hiệu ứng mờ */
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(139, 0, 0, 0.3); /* Bóng đổ mềm mại */
+}
+
+.taskbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+}
+
+.taskbar li {
+    padding: 15px 0;
+}
+
+.taskbar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    font-family: 'Dancing Script', cursive; /* Font chữ mềm mại */
+    font-size: 1.4em; /* Tăng kích thước chữ cho phù hợp với font mới */
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng hover */
+.taskbar a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
+}
+
+/* Hiệu ứng hover với border bottom */
+.taskbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.taskbar a:hover::after {
+    width: 70%;
+}
+
+/* CSS cho album ảnh */
+.photo-album {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.photo-card {
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.photo-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    background-image: inherit;
+}
+
+.photo-card:hover .photo-inner {
+    transform: rotateY(180deg);
+}
+
+.photo-front, .photo-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(60, 40, 40, 0.1);
+}
+
+.photo-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.photo-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(66, 19, 19, 0.7); /* Nền đen mờ */
+    backdrop-filter: blur(5px); /* Hiệu ứng mờ */
+    overflow: hidden;
+    border: 2px solid #ffffff; /* Thêm viền trắng */
+    box-sizing: border-box; /* Đảm bảo viền không làm thay đổi kích thước tổng thể */
+}
+
+.photo-back::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    background-image: inherit;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+.photo-back p {
+    color: #ffffff; /* Chữ màu trắng */
+    font-family: 'Dancing Script', cursive; /* Font chữ mềm mại */
+    font-size: 1.5em;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    z-index: 1;
+}

@@ -1,0 +1,219 @@
+body {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)),
+            url(image/newyear/85b411f1b05f0d01544e5.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}   
+
+.photo-album {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.photo-card {
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.photo-inner {
+position: relative;
+width: 100%;
+height: 100%;
+text-align: center;
+transition: transform 0.8s;
+transform-style: preserve-3d;
+background-image: inherit;
+}
+
+.photo-card:hover .photo-inner {
+    transform: rotateY(180deg);
+}
+
+.photo-front, .photo-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(118, 43, 43, 0.1);
+}
+
+.photo-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.photo-back {
+position: absolute;
+width: 100%;
+height: 100%;
+backface-visibility: hidden;
+border-radius: 10px;
+transform: rotateY(180deg);
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 20px;
+text-align: center;
+background-color: rgba(111, 28, 28, 0.7);
+backdrop-filter: blur(5px);
+overflow: hidden;
+border: 2px solid #ffffff; 
+box-sizing: border-box;
+}
+
+.photo-back p {
+    color: #ffffff;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5em;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    z-index: 1;
+}
+
+.title {
+text-align: center;
+padding: 40px 0;
+margin-bottom: 20px;
+}
+
+.title h1 {
+color: #ffffff;
+font-size: 6em;
+font-weight: 700;
+font-family: 'Dancing Script', cursive;
+letter-spacing: 2px;
+margin: 0;
+padding: 0;
+animation: glow 2s ease-in-out infinite alternate;
+position: relative;
+}
+
+/* Hiệu ứng phát sáng */
+@keyframes glow {
+from {
+    text-shadow: 
+        0 0 5px #ab174e,
+        0 0 10px #fff,
+        0 0 15px #8f0a4d,
+        0 0 20px #e60073,
+        0 0 25px #e60073,
+        0 0 30px #e60073,
+        0 0 35px #e60073;
+}
+to {
+    text-shadow: 
+        0 0 10px #fff,
+        0 0 20px #b3143f,
+        0 0 30px #ff4da6,
+        0 0 40px #ff4da6,
+        0 0 50px #ff4da6,
+        0 0 60px #ff4da6,
+        0 0 70px #ff4da6;
+}
+}
+.title h1::before {
+content: '';
+position: absolute;
+left: -100%;
+top: 0;
+width: 50%;
+height: 100%;
+background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+);
+animation: shine 3s infinite;
+}
+
+.title {
+position: relative;
+overflow: hidden;
+}
+
+.title::after {
+content: '✦';
+position: absolute;
+color: rgba(255, 255, 255, 0.8);
+animation: twinkle 1.5s infinite;
+}
+
+.title::before {
+content: '✦';
+position: absolute;
+color: rgba(255, 255, 255, 0.8);
+animation: twinkle 2s infinite 0.5s;
+}
+
+@keyframes twinkle {
+0%, 100% {
+    opacity: 0;
+    transform: scale(0.5);
+}
+50% {
+    opacity: 1;
+    transform: scale(1.2);
+}
+}
+
+/* Thêm nhiều ngôi sao với các vị trí khác nhau */
+.title::before { right: 20%; top: 20%; }
+.title::after { left: 15%; bottom: 30%; }
+
+/* Thêm các ngôi sao mới */
+.title .star-1,
+.title .star-2,
+.title .star-3,
+.title .star-4,
+.title .star-5,
+.title .star-6 {
+content: '✦';
+position: absolute;
+color: rgba(255, 255, 255, 0.8);
+}
+
+.title .star-1 { left: 25%; top: 15%; animation: twinkle 2s infinite 0.2s; }
+.title .star-2 { right: 30%; bottom: 20%; animation: twinkle 2s infinite 0.4s; }
+.title .star-3 { left: 40%; top: 30%; animation: twinkle 2s infinite 0.6s; }
+.title .star-4 { right: 35%; top: 25%; animation: twinkle 2s infinite 0.8s; }
+.title .star-5 { left: 30%; bottom: 25%; animation: twinkle 2s infinite 1s; }
+.title .star-6 { right: 25%; top: 35%; animation: twinkle 2s infinite 1.2s; }
+
+/* Thêm biến thể kích thước cho các ngôi sao */
+.title .star-1 { font-size: 1.2em; }
+.title .star-2 { font-size: 0.8em; }
+.title .star-3 { font-size: 1em; }
+.title .star-4 { font-size: 0.9em; }
+.title .star-5 { font-size: 1.1em; }
+.title .star-6 { font-size: 0.7em; }
+
+@keyframes fadeIn {
+from {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+.title h1:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}

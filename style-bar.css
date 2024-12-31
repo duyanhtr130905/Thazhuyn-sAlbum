@@ -1,0 +1,147 @@
+.taskbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(139, 0, 0, 0.8); /* Màu đỏ thẫm với độ trong suốt */
+    backdrop-filter: blur(4px); /* Hiệu ứng mờ */
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(139, 0, 0, 0.3); /* Bóng đổ mềm mại */
+}
+
+.taskbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+}
+
+.taskbar li {
+    padding: 15px 0;
+}
+
+.taskbar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    font-family: 'Dancing Script', cursive; /* Font chữ mềm mại */
+    font-size: 1.4em; /* Tăng kích thước chữ cho phù hợp với font mới */
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng hover */
+.taskbar a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
+}
+
+/* Hiệu ứng hover với border bottom */
+.taskbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+    transform: translateX(-30%);
+}
+
+.taskbar a:hover::after {
+    width: 70%;
+}
+
+/* Điều chỉnh khoảng cách cho các phần khác */
+.title {
+    margin-top: 70px; /* Tăng khoảng cách một chút do font mới cao hơn */
+}
+
+/* Thêm CSS cho dropdown menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(139, 0, 0, 0.9);
+    backdrop-filter: blur(8px);
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.dropdown-content li {
+    padding: 0;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 15px 25px;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2em;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng hover cho các mục trong dropdown */
+.dropdown-content a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    padding-left: 30px; /* Di chuyển text sang phải một chút khi hover */
+}
+
+/* Thêm mũi tên cho menu chính */
+.dropdown > a::after {
+    content: '▾';
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover > a::after {
+    transform: rotate(180deg);
+}
+
+/* Animation cho dropdown */
+@keyframes dropdownFade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Thêm border mềm mại giữa các mục */
+.dropdown-content li:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hiệu ứng ripple khi hover */
+.dropdown-content a:hover {
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.15)
+    );
+}
