@@ -1,0 +1,201 @@
+/* General styles */
+body {
+    background: linear-gradient(135deg, rgba(41, 77, 108, 0.7), rgba(207, 212, 76, 0.4)),
+                url(image/summer/239ad58b2b3f9661cf2e12.jpg); /* Thay link ảnh nền */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Dancing Script', cursive;
+    color: white;
+}
+
+/* Title */
+.title {
+    text-align: center;
+    padding: 100px 0; /* Khoảng cách lớn hơn */
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.title h1 {
+    color: #282263; /* Màu vàng */
+    font-size: 4em;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: 'Dancing Script', cursive;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 0;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Các ngôi sao cho title */
+.title .star-1, 
+.title .star-2, 
+.title .star-3, 
+.title .star-4, 
+.title .star-5, 
+.title .star-6 {
+    content: '✦';
+    position: absolute;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.title .star-1 { left: 25%; top: 15%; animation: twinkle 2s infinite 0.2s; }
+.title .star-2 { right: 30%; bottom: 20%; animation: twinkle 2s infinite 0.4s; }
+.title .star-3 { left: 40%; top: 30%; animation: twinkle 2s infinite 0.6s; }
+.title .star-4 { right: 35%; top: 25%; animation: twinkle 2s infinite 0.8s; }
+.title .star-5 { left: 30%; bottom: 25%; animation: twinkle 2s infinite 1s; }
+.title .star-6 { right: 25%; top: 35%; animation: twinkle 2s infinite 1.2s; }
+
+.title .star-1 { font-size: 1.2em; }
+.title .star-2 { font-size: 0.8em; }
+.title .star-3 { font-size: 1em; }
+.title .star-4 { font-size: 0.9em; }
+.title .star-5 { font-size: 1.1em; }
+.title .star-6 { font-size: 0.7em; }
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 
+            0 0 5px #fff,
+            0 0 10px #fff,
+            0 0 15px #ffd700,
+            0 0 20px #ffd700,
+            0 0 25px #ffd700,
+            0 0 30px #ffd700,
+            0 0 35px #ffd700;
+    }
+    to {
+        text-shadow: 
+            0 0 10px #fff,
+            0 0 20px #ffff99,
+            0 0 30px #ffff99,
+            0 0 40px #ffff99,
+            0 0 50px #ffff99,
+            0 0 60px #ffff99,
+            0 0 70px #ffff99;
+    }
+}
+
+/* Photo album container */
+.photo-album {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    margin: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Photo card */
+.photo-card {
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.photo-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    background-image: inherit;
+}
+
+.photo-card:hover .photo-inner {
+    transform: rotateY(180deg);
+}
+
+.photo-front, .photo-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.photo-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Photo back */
+.photo-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(44, 60, 20, 0.7);
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+    border: 2px solid #ffffff;
+    box-sizing: border-box;
+}
+
+.photo-back::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    background-image: inherit;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+.photo-back p {
+    color: #ffffff;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5em;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    z-index: 1;
+}
+
+/* Animation for fade in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
