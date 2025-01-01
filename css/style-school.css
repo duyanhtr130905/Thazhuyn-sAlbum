@@ -1,7 +1,7 @@
 /* CSS cho toàn trang */
 body {
     background: linear-gradient(135deg, rgba(103, 24, 24, 0.936), rgba(107, 96, 96, 0.8)),
-                url(image/school/fb990a7f64cad99480db24.jpg); /* Thay ảnh nền */
+                url(/image/school/fb990a7f64cad99480db24.jpg); /* Thay ảnh nền */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

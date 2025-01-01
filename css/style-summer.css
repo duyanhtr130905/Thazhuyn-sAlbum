@@ -1,7 +1,7 @@
 /* General styles */
 body {
     background: linear-gradient(135deg, rgba(41, 77, 108, 0.7), rgba(207, 212, 76, 0.4)),
-                url(image/summer/239ad58b2b3f9661cf2e12.jpg); /* Thay link ảnh nền */
+                url(/image/summer/239ad58b2b3f9661cf2e12.jpg); /* Thay link ảnh nền */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
