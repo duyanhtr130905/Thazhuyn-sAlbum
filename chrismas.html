@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="css/style-bar.css">
     <link rel="stylesheet" href="css/style-chrismas.css">
     <link rel="stylesheet" href="css/style-footer.css">
+    <link rel="stylesheet" href="css/style-button.css">
+    <link rel="stylesheet" href="css/style-form.css">
 
 </head>
 <body>
@@ -174,6 +176,12 @@
         <!-- Thêm các photo card khác tương tự -->
     </div>
 
+    <div class="button-container">
+        <input type="file" id="imageUpload" accept="image/" style="display: none;">
+        <button id="uploadButton">Thêm ảnh</button>
+        <button id="deleteButton">Xóa ảnh</button>
+    </div> 
+
     <!-- Footer -->
     <div class="album-footer" id="info-section">
         <p>Thank you for sharing these Christmas moments!</p>
@@ -193,8 +201,8 @@
             </a>
         </div>
     </div>
-
-    <!-- Script cho hiệu ứng tuy -->
+    <script src="script.js"></script>
+    <!-- Script cho hiệu ứng tuyết -->
     <script>
         function createSnowflakes() {
             const snowflakes = ['❄', '❅', '❆'];

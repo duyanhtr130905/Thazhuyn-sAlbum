@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/style-school.css">
     <link rel="stylesheet" href="css/style-bar.css">
     <link rel="stylesheet" href="css/style-footer.css">
+    <link rel="stylesheet" href="css/style-button.css">
+    <link rel="stylesheet" href="css/style-form.css">
 </head>
 <body>
     <nav class="taskbar">
@@ -172,6 +174,12 @@
         <!-- Thêm các photo-card khác tương tự -->
     </div>
 
+    <div class="button-container">
+        <input type="file" id="imageUpload" accept="image/" style="display: none;">
+        <button id="uploadButton">Thêm ảnh</button>
+        <button id="deleteButton">Xóa ảnh</button>
+    </div>
+
     <div class="album-footer">
         <p>Thanks for visiting</p>
         <p class="signature">AOF ♥</p>
@@ -190,17 +198,6 @@
             </a>
         </div>
     </div>
-
-    <script>
-        window.addEventListener('scroll', () => {
-            const cards = document.querySelectorAll('.photo-card');
-            cards.forEach(card => {
-                const cardTop = card.getBoundingClientRect().top;
-                if (cardTop < window.innerHeight) {
-                    card.style.opacity = '1';
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

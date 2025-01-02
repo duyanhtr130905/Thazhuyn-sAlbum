@@ -9,12 +9,23 @@
     <link rel="stylesheet" href="css/style-summer.css">
     <link rel="stylesheet" href="css/style-bar.css">
     <link rel="stylesheet" href="css/style-footer.css">
+    <link rel="stylesheet" href="css/style-button.css">
+    <link rel="stylesheet" href="css/style-form.css">
 </head>
 <body>
     <nav class="taskbar">
         <ul>
-            <li><a href="#title">Event</a></li>
-            <li><a href="#contact">Info</a></li>
+            <li class="dropdown">
+                <a href="#title" class="dropbtn">Event</a>
+                <ul class="dropdown-content">
+                    <li><a href="index.html">Tết</a></li>
+                    <li><a href="chrismas.html">Giáng sinh</a></li>
+                    <li><a href="school.html">AOF</a></li>
+                    <li><a href="summer.html">Mùa hè xanh</a></li>
+                    <li><a href="#winter">Đông ấm</a></li>
+                </ul>
+            </li>
+            <li><a href="#info-section">Info</a></li>
         </ul>
     </nav>
 
@@ -160,8 +171,12 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Thêm các photo-card khác tương tự -->
+    <div class="button-container">
+        <input type="file" id="imageUpload" accept="image/" style="display: none;">
+        <button id="uploadButton">Thêm ảnh</button>
+        <button id="deleteButton">Xóa ảnh</button>
     </div>
 
     <div class="album-footer" id="contact">
@@ -183,17 +198,6 @@
         </div>
     </div>
 
-    <script>
-        // Thêm animation khi scroll nếu muốn
-        window.addEventListener('scroll', () => {
-            const cards = document.querySelectorAll('.photo-card');
-            cards.forEach(card => {
-                const cardTop = card.getBoundingClientRect().top;
-                if (cardTop < window.innerHeight) {
-                    card.style.opacity = '1';
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
