@@ -26,6 +26,7 @@
                 </ul>
             </li>
             <li><a href="#info-section">Info</a></li>
+            <li><a href="#" onclick="createNewTemplate()">New Template</a></li> </ul>
         </ul>
     </nav>
 
@@ -199,5 +200,42 @@
         </div>
     </div>
     <script src="script.js"></script>
+    <!-- <script>
+        function createNewTemplate() {
+        // Hiển thị popup để người dùng nhập thông tin
+        let albumName = prompt("Nhập tên chủ đề:");
+        let color1 = prompt("Nhập màu chủ đạo 1 (ví dụ: #e66465):");
+        let color2 = prompt("Nhập màu chủ đạo 2 (ví dụ: #9198e5):");
+
+        // Kiểm tra xem người dùng đã nhập đủ thông tin chưa
+        if (albumName && color1 && color2) {
+            fetch('/create-template', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ themeName: albumName, color1: color1, color2: color2 }),
+            })
+        .then(response => {
+        if (response.ok) {
+            return response.text(); // Hoặc response.json() nếu server trả về JSON
+        } else {
+            throw new Error('Lỗi khi tạo template.');
+        }
+        })
+        .then(data => {
+        // 3. Chuyển hướng đến trang mới
+        window.location.href = data; // data chứa URL trang mới từ server
+        })
+        .catch(error => {
+        console.error(error);
+        alert('Có lỗi xảy ra. Vui lòng thử lại sau!');
+        });
+        console.log("Tạo template mới với thông tin:", albumName, color1, color2);
+        } else {
+        alert("Vui lòng nhập đầy đủ thông tin!");
+        }
+    }
+    </script> -->
 </body>
 </html>
