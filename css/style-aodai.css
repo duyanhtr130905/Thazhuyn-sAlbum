@@ -1,13 +1,13 @@
 body {
-    background: linear-gradient(135deg, rgba(220, 38, 38, 0.8), rgba(217, 119, 6, 0.6)),
-            url(/image/30.4/z6667671581661_14d3d04b54e620a148e0778e0b6f43f8.jpg);
+    background: linear-gradient(135deg, rgba(139, 69, 19, 0.7), rgba(160, 82, 45, 0.3)),
+            url(/image/aodaivn/z6667683738812_fa59089d0419947274e88aa2201fd9ab.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Times New Roman', serif;
 }   
 
 .photo-album {
@@ -45,7 +45,7 @@ body {
     height: 100%;
     backface-visibility: hidden;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(220, 38, 38, 0.3);
+    box-shadow: 0 4px 8px rgba(139, 69, 19, 0.3);
 }
 
 .photo-front img {
@@ -53,7 +53,7 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
-    border: 2px solid rgba(234, 179, 8, 0.6);
+    border: 2px solid #D4AF37;
 }
 
 .photo-back {
@@ -68,22 +68,22 @@ body {
     justify-content: center;
     padding: 20px;
     text-align: center;
-    background: linear-gradient(135deg, rgba(220, 38, 38, 0.8), rgba(185, 28, 28, 0.9));
+    background: linear-gradient(135deg, rgba(139, 69, 19, 0.9), rgba(160, 82, 45, 0.8));
     backdrop-filter: blur(5px);
     overflow: hidden;
-    border: 2px solid #fbbf24; 
+    border: 2px solid #D4AF37;
     box-sizing: border-box;
 }
 
 .photo-back p {
-    color: #fef3c7;
+    color: #FFFAF0;
     font-family: 'Dancing Script', cursive;
-    font-size: 1.5em;
+    font-size: 1.4em;
     line-height: 1.6;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     padding: 20px;
     z-index: 1;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .title {
@@ -93,38 +93,53 @@ body {
 }
 
 .title h1 {
-    color: #fef3c7;
+    color: #FFFFFF;
     font-size: 6em;
     font-weight: 700;
     font-family: 'Dancing Script', cursive;
     letter-spacing: 2px;
     margin: 0;
     padding: 0;
-    animation: glow 2s ease-in-out infinite alternate;
+    animation: glow 2.5s ease-in-out infinite alternate;
     position: relative;
+    -webkit-text-stroke: 2px #D4AF37;
+    text-shadow: 2px #D4AF37;
 }
 
-/* Hiệu ứng phát sáng với màu đỏ vàng */
+.title .subtitle {
+    color: #FFFAF0;
+    font-size: 1.5em;
+    font-family: 'Dancing Script', cursive;
+    margin-top: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-style: italic;
+}
+
+/* Hiệu ứng phát sáng cho chủ đề áo dài */
 @keyframes glow {
     from {
         text-shadow: 
-            0 0 5px #dc2626,
-            0 0 10px #fef3c7,
-            0 0 15px #dc2626,
-            0 0 20px #f59e0b,
-            0 0 25px #f59e0b,
-            0 0 30px #dc2626,
-            0 0 35px #dc2626;
+            0 0 5px #D4AF37,
+            0 0 10px #D4AF37,
+            0 0 15px #B8860B,
+            0 0 20px #D4AF37,
+            0 0 25px #D4AF37,
+            0 0 30px #DAA520,
+            0 0 35px #DAA520;
+        -webkit-text-stroke: 2px #D4AF37;
+        text-stroke: 2px #D4AF37;
     }
     to {
         text-shadow: 
-            0 0 10px #fef3c7,
-            0 0 20px #dc2626,
-            0 0 30px #f59e0b,
-            0 0 40px #f59e0b,
-            0 0 50px #dc2626,
-            0 0 60px #f59e0b,
-            0 0 70px #dc2626;
+            0 0 10px #D4AF37,
+            0 0 20px #D4AF37,
+            0 0 30px #FFD700,
+            0 0 40px #FFD700,
+            0 0 50px #FFD700,
+            0 0 60px #FFD700,
+            0 0 70px #FFD700;
+        -webkit-text-stroke: 3px #FFD700;
+        text-stroke: 3px #FFD700;
     }
 }
 
@@ -138,7 +153,7 @@ body {
     background: linear-gradient(
         120deg,
         transparent,
-        rgba(237, 190, 71, 0.8),
+        rgba(255, 215, 0, 0.6),
         transparent
     );
     animation: shine 3s infinite;
@@ -159,17 +174,17 @@ body {
 }
 
 .title::after {
-    content: '★';
+    content: '❀';
     position: absolute;
-    color: rgba(251, 191, 36, 0.9);
+    color: rgba(212, 175, 55, 0.8);
     animation: twinkle 1.5s infinite;
     font-size: 1.5em;
 }
 
 .title::before {
-    content: '★';
+    content: '❀';
     position: absolute;
-    color: rgba(251, 191, 36, 0.9);
+    color: rgba(212, 175, 55, 0.8);
     animation: twinkle 2s infinite 0.5s;
     font-size: 1.2em;
 }
@@ -177,28 +192,28 @@ body {
 @keyframes twinkle {
     0%, 100% {
         opacity: 0;
-        transform: scale(0.5) rotate(0deg);
+        transform: scale(0.5);
     }
     50% {
         opacity: 1;
-        transform: scale(1.2) rotate(180deg);
+        transform: scale(1.2);
     }
 }
 
-/* Thêm nhiều ngôi sao với các vị trí khác nhau */
+/* Thêm nhiều hoa văn với các vị trí khác nhau */
 .title::before { right: 20%; top: 20%; }
 .title::after { left: 15%; bottom: 30%; }
 
-/* Thêm các ngôi sao mới với biểu tượng ngôi sao 5 cánh */
+/* Thêm các hoa văn mới */
 .title .star-1,
 .title .star-2,
 .title .star-3,
 .title .star-4,
 .title .star-5,
 .title .star-6 {
-    content: '★';
     position: absolute;
-    color: rgba(251, 191, 36, 0.9);
+    color: rgba(212, 175, 55, 0.8);
+    font-size: 1.5em;
 }
 
 .title .star-1 { left: 25%; top: 15%; animation: twinkle 2s infinite 0.2s; }
@@ -208,13 +223,13 @@ body {
 .title .star-5 { left: 30%; bottom: 25%; animation: twinkle 2s infinite 1s; }
 .title .star-6 { right: 25%; top: 35%; animation: twinkle 2s infinite 1.2s; }
 
-/* Thêm biến thể kích thước cho các ngôi sao */
+/* Thêm biến thể kích thước cho các hoa văn */
 .title .star-1 { font-size: 1.4em; }
-.title .star-2 { font-size: 1em; }
-.title .star-3 { font-size: 1.2em; }
-.title .star-4 { font-size: 1.1em; }
-.title .star-5 { font-size: 1.3em; }
-.title .star-6 { font-size: 0.9em; }
+.title .star-2 { font-size: 1.1em; }
+.title .star-3 { font-size: 1.3em; }
+.title .star-4 { font-size: 1.2em; }
+.title .star-5 { font-size: 1.5em; }
+.title .star-6 { font-size: 1em; }
 
 @keyframes fadeIn {
     from {
@@ -230,39 +245,67 @@ body {
 .title h1:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease;
-    color: #a94118;
 }
 
-/* Thêm hiệu ứng patriotic cho ngày 30/4 */
-.photo-card:hover {
-    animation: patriotic-pulse 0.6s ease-in-out;
+/* Thông tin văn hóa */
+.culture-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
 }
 
-@keyframes patriotic-pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
-    }
-    70% {
-        transform: scale(1.05);
-        box-shadow: 0 0 0 10px rgba(220, 38, 38, 0);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
-    }
+.info-card {
+    background: linear-gradient(135deg, rgba(139, 69, 19, 0.9), rgba(160, 82, 45, 0.8));
+    border: 2px solid #D4AF37;
+    border-radius: 15px;
+    padding: 25px;
+    max-width: 300px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
 }
 
-/* Thêm hiệu ứng cho background */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 20% 80%, rgba(251, 191, 36, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.1) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: -1;
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.info-card h3 {
+    color: #D4AF37;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.info-card p {
+    color: #FFFAF0;
+    font-family: 'Times New Roman', serif;
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .title h1 {
+        font-size: 4em;
+    }
+    
+    .photo-card {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .culture-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .info-card {
+        max-width: 90%;
+    }
 }

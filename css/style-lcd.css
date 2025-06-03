@@ -1,0 +1,347 @@
+body {
+    background: linear-gradient(135deg, rgba(220, 20, 60, 0.8), rgba(178, 34, 34, 0.5)),
+            url(/image/LCD/z6667680102693_b5e0a14b2a4dc4626ed381bc5718ee9c.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}   
+
+.photo-album {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.photo-card {
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.photo-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    background-image: inherit;
+}
+
+.photo-card:hover .photo-inner {
+    transform: rotateY(180deg);
+}
+
+.photo-front, .photo-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(220, 20, 60, 0.4);
+}
+
+.photo-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid #DC143C;
+}
+
+.photo-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(220, 20, 60, 0.95), rgba(178, 34, 34, 0.9));
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+    border: 3px solid #FFFFFF;
+    box-sizing: border-box;
+}
+
+.photo-back p {
+    color: #FFFFFF;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.4em;
+    line-height: 1.6;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    z-index: 1;
+    font-weight: 600;
+}
+
+.title {
+    text-align: center;
+    padding: 40px 0;
+    margin-bottom: 20px;
+}
+
+.title h1 {
+    color: #FFFFFF;
+    font-size: 6em;
+    font-weight: 700;
+    font-family: 'Dancing Script', cursive;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 0;
+    animation: glow 2.5s ease-in-out infinite alternate;
+    position: relative;
+    -webkit-text-stroke: 3px #DC143C;
+    text-shadow: 3px #DC143C;
+}
+
+.title .subtitle {
+    color: #ffffff;
+    font-size: 1.5em;
+    font-family: 'Arial', sans-serif;
+    margin-top: 10px;
+    text-shadow: 2px 2px 4px rgba(48, 34, 34, 0.7);
+    font-weight: 600;
+    background: linear-gradient(45deg, #ffffff, #FF6B6B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Hiệu ứng phát sáng cho chủ đề đoàn viên */
+@keyframes glow {
+    from {
+        text-shadow: 
+            0 0 5px #DC143C,
+            0 0 10px #DC143C,
+            0 0 15px #B22222,
+            0 0 20px #DC143C,
+            0 0 25px #DC143C,
+            0 0 30px #FF0000,
+            0 0 35px #FF0000;
+        -webkit-text-stroke: 3px #DC143C;
+        text-stroke: 3px #DC143C;
+    }
+    to {
+        text-shadow: 
+            0 0 10px #DC143C,
+            0 0 20px #DC143C,
+            0 0 30px #FF4500,
+            0 0 40px #FF4500,
+            0 0 50px #FF6347,
+            0 0 60px #FF6347,
+            0 0 70px #FF6347;
+        -webkit-text-stroke: 4px #FF0000;
+        text-stroke: 4px #FF0000;
+    }
+}
+
+.title h1::before {
+    content: '';
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.8),
+        transparent
+    );
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.title {
+    position: relative;
+    overflow: hidden;
+}
+
+.title::after {
+    content: '★';
+    position: absolute;
+    color: rgba(255, 255, 255, 0.9);
+    animation: twinkle 1.5s infinite;
+    font-size: 1.8em;
+}
+
+.title::before {
+    content: '★';
+    position: absolute;
+    color: rgba(255, 255, 255, 0.9);
+    animation: twinkle 2s infinite 0.5s;
+    font-size: 1.5em;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* Thêm nhiều biểu tượng với các vị trí khác nhau */
+.title::before { right: 20%; top: 20%; }
+.title::after { left: 15%; bottom: 30%; }
+
+/* Thêm các biểu tượng mới */
+.title .star-1,
+.title .star-2,
+.title .star-3,
+.title .star-4,
+.title .star-5,
+.title .star-6 {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.8em;
+}
+
+.title .star-1 { left: 25%; top: 15%; animation: twinkle 2s infinite 0.2s; }
+.title .star-2 { right: 30%; bottom: 20%; animation: twinkle 2s infinite 0.4s; }
+.title .star-3 { left: 40%; top: 30%; animation: twinkle 2s infinite 0.6s; }
+.title .star-4 { right: 35%; top: 25%; animation: twinkle 2s infinite 0.8s; }
+.title .star-5 { left: 30%; bottom: 25%; animation: twinkle 2s infinite 1s; }
+.title .star-6 { right: 25%; top: 35%; animation: twinkle 2s infinite 1.2s; }
+
+/* Thêm biến thể kích thước cho các biểu tượng */
+.title .star-1 { font-size: 1.6em; color: #FFFFFF; }
+.title .star-2 { font-size: 1.4em; color: #FF6B6B; }
+.title .star-3 { font-size: 1.8em; color: #DC143C; }
+.title .star-4 { font-size: 1.5em; color: #FFFFFF; }
+.title .star-5 { font-size: 1.7em; color: #FF6B6B; }
+.title .star-6 { font-size: 1.3em; color: #DC143C; }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title h1:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Thông tin đoàn viên */
+.youth-union-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+
+.info-card {
+    background: linear-gradient(135deg, rgba(220, 20, 60, 0.95), rgba(178, 34, 34, 0.9));
+    border: 3px solid #FFFFFF;
+    border-radius: 15px;
+    padding: 25px;
+    max-width: 300px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #FFFFFF, #DC143C, #FFFFFF);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+    border-color: #FF6B6B;
+}
+
+.info-card h3 {
+    color: #FFFFFF;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-weight: 700;
+}
+
+.info-card p {
+    color: #FFFFFF;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    font-weight: 500;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .title h1 {
+        font-size: 4em;
+        -webkit-text-stroke: 2px #DC143C;
+        text-shadow: 2px #DC143C;
+    }
+    
+    .photo-card {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .youth-union-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .info-card {
+        max-width: 90%;
+    }
+    
+    .title .star-1,
+    .title .star-2,
+    .title .star-3,
+    .title .star-4,
+    .title .star-5,
+    .title .star-6 {
+        font-size: 1.2em;
+    }
+}
