@@ -7,7 +7,7 @@
 body {
     font-family: 'Playfair Display', serif;
     background: linear-gradient(135deg, rgba(92, 219, 147, 0.8), rgba(118, 75, 162, 0.6)),
-                url('/image/Xingtoo/z6667677359011_753fc2a16e70c6594d7b4fb19a1e0903.jpg');
+                url(../image/Xingtoo/z6667677359011_753fc2a16e70c6594d7b4fb19a1e0903.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

@@ -1,7 +1,7 @@
 /* Thiết lập nền Giáng sinh */
 body {
     background: linear-gradient(135deg, rgba(129, 57, 57, 0.8), rgba(57, 88, 57, 0.8)),
-                url(/image/christmas/ead9e46519cfa491fdde10.jpg);
+                url(../image/christmas/ead9e46519cfa491fdde10.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

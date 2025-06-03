@@ -1,6 +1,6 @@
 body {
     background: linear-gradient(135deg, rgba(220, 38, 38, 0.8), rgba(217, 119, 6, 0.6)),
-            url(/image/30.4/z6667671581661_14d3d04b54e620a148e0778e0b6f43f8.jpg);
+            url(../image/30.4/z6667671581661_14d3d04b54e620a148e0778e0b6f43f8.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
