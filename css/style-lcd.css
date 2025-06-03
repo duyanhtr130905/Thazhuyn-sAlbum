@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(135deg, rgba(220, 20, 60, 0.8), rgba(178, 34, 34, 0.5)),
+    background: linear-gradient(135deg, rgba(239, 61, 96, 0.8), rgba(178, 34, 34, 0.5)),
             url(/image/LCD/z6667680102693_b5e0a14b2a4dc4626ed381bc5718ee9c.jpg);
     background-size: cover;
     background-position: center;
@@ -102,8 +102,8 @@ body {
     padding: 0;
     animation: glow 2.5s ease-in-out infinite alternate;
     position: relative;
-    -webkit-text-stroke: 3px #DC143C;
-    text-shadow: 3px #DC143C;
+    -webkit-text-stroke: 3px #f15776;
+    text-shadow: 3px #ff4646;
 }
 
 .title .subtitle {
@@ -130,7 +130,7 @@ body {
             0 0 25px #DC143C,
             0 0 30px #FF0000,
             0 0 35px #FF0000;
-        -webkit-text-stroke: 3px #DC143C;
+        -webkit-text-stroke: 3px #f4dada;
         text-stroke: 3px #DC143C;
     }
     to {
@@ -142,7 +142,7 @@ body {
             0 0 50px #FF6347,
             0 0 60px #FF6347,
             0 0 70px #FF6347;
-        -webkit-text-stroke: 4px #FF0000;
+        -webkit-text-stroke: 4px #cbc4c4;
         text-stroke: 4px #FF0000;
     }
 }
