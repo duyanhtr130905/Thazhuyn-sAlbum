@@ -1,6 +1,6 @@
 body {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)),
-            url(/image/newyear/85b411f1b05f0d01544e5.jpg);
+            url(../image/newyear/85b411f1b05f0d01544e5.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
