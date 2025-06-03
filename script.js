@@ -95,15 +95,6 @@ deleteButton.addEventListener('click', () => {
     }
 });
 
-deleteButton.addEventListener('click', () => {
-    const photoCards = document.querySelectorAll('.photo-card');
-    if (photoCards.length > 0) {
-        photoAlbum.removeChild(photoCards[photoCards.length - 1]);
-    } else {
-        alert('Không còn ảnh để xóa!');
-    }
-});
-
 
 window.addEventListener('scroll', () => {
     const cards = document.querySelectorAll('.photo-card');
